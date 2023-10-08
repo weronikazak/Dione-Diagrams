@@ -1,0 +1,11 @@
+modules:
+  macro:
+    - key: dione-hello-world
+      function: main
+      title: Dione
+      description: Inserts Hello world!
+  function:
+    - key: main
+      handler: index.run
+app:
+  id: ari:cloud:ecosystem::app/cfe94d26-f7e8-4c4c-85d7-db1e1d374ed7
