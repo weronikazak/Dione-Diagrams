@@ -19,5 +19,3 @@ permissions:
         - 'api.openai.com'
 app:
   id: ari:cloud:ecosystem::app/fd8819ff-32da-445d-89d5-995dc723c267
-  runtime:
-    snapshots: false
