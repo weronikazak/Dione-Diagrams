@@ -1,11 +1,21 @@
 modules:
   macro:
-    - key: dione-hello-world
+    - key: dione
       function: main
-      title: Dione
-      description: Inserts Hello world!
+      title: Dione Diagrams
+      description: Create Diagrams in Confluence with Dione 
   function:
     - key: main
       handler: index.run
+permissions:
+  scopes:
+    - 'write:confluence-content'
+    - 'read:content:confluence'
+    - 'write:content:confluence'
+    - 'read:page:confluence'
+  external:
+    fetch:
+      backend:
+        - 'api.openai.com'
 app:
-  id: ari:cloud:ecosystem::app/cfe94d26-f7e8-4c4c-85d7-db1e1d374ed7
+  id: ari:cloud:ecosystem::app/fd8819ff-32da-445d-89d5-995dc723c267
