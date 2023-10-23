@@ -29,7 +29,7 @@ function App() {
   return (
     <div>
       <h1>{data ? data : 'Failed to load!'}</h1>
-      {data ? <Mermaid chart={data} /> : <Mermaid chart={failedLoad} /> }
+      {data ? <Mermaid key={data} chart={data} /> : <Mermaid key={failedLoad} chart={failedLoad} /> }
     </div>
   );
 }
