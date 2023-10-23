@@ -9,16 +9,17 @@ function App() {
     invoke('getText', { example: 'my-invoke-variable' }).then(setData);
   }, []);
 
-  const d = `graph TD 
-  A[Client] -->|tcp_123| B
-  B(Load Balancer) 
-  B -->|tcp_456| C[Server1] 
-  B -->|tcp_456| D[Server2]`;
+  const failedLoad = `graph TD
+  A[🌐 Page Load Attempt]
+  B[❌ Page Failed to Load]
+  C[😞 Unhappy User]
+  A --> B
+  B --> C`;
 
   return (
     <div>
-      <h1>{data? data : d}</h1>
-      {data ? <Mermaid chart={data} /> : <Mermaid chart={d} /> }
+      <h1>{data? data : 'Failed to load!'}</h1>
+      {data ? <Mermaid chart={data} /> : <Mermaid chart={failedLoad} /> }
     </div>
   );
 }
