@@ -1,13 +1,17 @@
 modules:
   macro:
     - key: dione
-      function: main
-      title: Dione Diagrams
-      description: Create Diagrams in Confluence with Dione 
-      icon: https://raw.githubusercontent.com/weronikazak/Dione-VSC/main/public/images/dione-icon.png
+      resource: main
+      resolver:
+        function: resolver
+      title: Dione Diag
+      description: Generates Diagrams for Confluence
   function:
-    - key: main
-      handler: index.run
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/dione/build
 permissions:
   scopes:
     - 'write:confluence-content'
@@ -19,7 +23,7 @@ permissions:
     fetch:
       backend:
         - 'api.openai.com'
-        - 'dione-vsc.vercel.app/convert'
+        - 'https://dione-vsc.vercel.app/convert'
 
 app:
   id: ari:cloud:ecosystem::app/fd8819ff-32da-445d-89d5-995dc723c267
