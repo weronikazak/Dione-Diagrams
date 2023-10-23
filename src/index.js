@@ -6,11 +6,10 @@ resolver.define('getText', (req) => {
   console.log(req);
 
   const chartDefinition = `
-  graph TD;
-  A -> B;
-  A -> C;
-  B -> D;
-  C -> D;
+  graph TD 
+  A[Client] --> B[Load Balancer] 
+  B --> C[Server1] 
+  B --> D[Server2]
   `;
 
   return chartDefinition;
