@@ -1,7 +1,7 @@
 import Resolver from '@forge/resolver';
-import { OpenAIApi } from 'openai';
+import { OpenAIApi, Configuration } from 'openai';
 import api, { route } from "@forge/api";
-
+import tty from 'tty';
 
 const OPENAI_API_KEY = "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";
 
@@ -24,6 +24,8 @@ resolver.define('processWithOpenAI', async ({ contentId }) => {
 
   const prompt = `Generate a MermaidJS syntax to create an appropriate graph for this task: "${pageContent}". The response shouldn't contain anything apart from the snippet. No extra text or JavaScript formatting.`;
 
+  tty.isatty = () => { return false };
+
   const configuration = new Configuration({
     apiKey: OPENAI_API_KEY,          // Replace with your actual API key
     organisation: 'org-6kKQzWIJ9eFzq5KuSvadLS1y'     // Replace with your actual organisation ID
@@ -32,7 +34,7 @@ resolver.define('processWithOpenAI', async ({ contentId }) => {
   const openai = new OpenAIApi(configuration);
 
   // Send content to OpenAI using gpt-3.5-turbo
-  const openAIData = await openai.createChatCompletion({
+  const chatCompletion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [{
       role: "user",         // Role of the user in the conversation
@@ -40,7 +42,6 @@ resolver.define('processWithOpenAI', async ({ contentId }) => {
     }]
   });
 
-  console.log('openAIData ' + JSON.stringify(openAIData));
   const response = chatCompletion.data.choices[0].message.content;
   console.log('response ' + response);
   return {
