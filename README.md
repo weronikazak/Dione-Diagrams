@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/weronikazak/Dione-VSC-Extension/main/public/images/dione-rep.png">
+<img src="https://raw.githubusercontent.com/weronikazak/Dione-Diagrams/main/src/images/dione-rep.png">
 
 # Dione Diagrams
 
@@ -36,7 +36,7 @@ A Confluence Extension to help you create graphs on the fly.
 
 ## Examples:
 
-<img src="https://raw.githubusercontent.com/weronikazak/Dione-VSC-Extension/main/public/images/code-documentation.gif">
+<img src="https://raw.githubusercontent.com/weronikazak/Dione-Diagrams/main/src/images/diagram.gif">
 
 ## Contact:
 
