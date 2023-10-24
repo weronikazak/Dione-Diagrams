@@ -1,46 +1,43 @@
-# Forge Hello World
+<img src="https://raw.githubusercontent.com/weronikazak/Dione-VSC-Extension/main/public/images/dione-rep.png">
 
-This project contains a Forge app written in Javascript that displays `Hello World!` in a Confluence macro. 
+# Dione Diagrams
 
-See [developer.atlassian.com/platform/forge/](https://developer.atlassian.com/platform/forge) for documentation and tutorials explaining Forge.
+A Confluence Extension to help you create graphs on the fly.
 
-## Requirements
+## How to Use:
 
-See [Set up Forge](https://developer.atlassian.com/platform/forge/set-up-forge/) for instructions to get set up.
+1. Login to your Atlassian account and go to Confluence.
 
-## Quick start
-- Install top-level dependencies:
-```
-npm install
-```
+2. Create or edit a page and write a description of the graph.
 
-- Install dependencies inside of the `static/hello-world` directory:
-```
-npm install
-```
+3. Click on the **[+]** icon at the end of your top bar.
 
-- Modify your app by editing the files in `static/hello-world/src/`.
+4. Search for ***Dione Diagrams***.
 
-- Build your app (inside of the `static/hello-world` directory):
-```
-npm run build
-```
+5. Click on it and watch the magic happen!
 
-- Deploy your app by running:
-```
-forge deploy
-```
+## How to Run Locally:
 
-- Install your app in an Atlassian site by running:
-```
-forge install
-```
+1. Install Atlassian's Forge. Follow the instructions [here](https://developer.atlassian.com/platform/forge/getting-started/) to set up and login with Forge.
 
-### Notes
-- Use the `forge deploy` command when you want to persist code changes.
-- Use the `forge install` command when you want to install the app on a new site.
-- Once the app is installed on a site, the site picks up the new app changes you deploy without needing to rerun the install command.
+2. Clone this repository on your computer.
 
-## Support
+3. Open a console and type `cd Dione-Diagrams`. Run `npm i` command to install missing packages.
 
-See [Get help](https://developer.atlassian.com/platform/forge/get-help/) for how to get help and provide feedback.
+4. Go to `manifest.yml`. **Change the id of your app to the Forge application you have created in step 1.**
+
+5. Go to `src/index.js`. Change the two variables `OPENAI_API_KEY` and `ORG_ID` to the your OpenAI key and Organisation ID. You can get these information from your console on OpenAI.
+
+6. On the top of the file is another variable called `PAGEID`. Replace its value with the ID of the page, which you want to get the content from.
+
+7. Open a console and type `cd ../static/dione`. Then `npm i`. It will install all the modules you need for the React App. Run `npm run build`.
+
+8. Deploy and install your application and use in your account!
+
+## Examples:
+
+<img src="https://raw.githubusercontent.com/weronikazak/Dione-VSC-Extension/main/public/images/code-documentation.gif">
+
+## Contact:
+
+**Spotted an issue? [Report it here.](https://github.com/weronikazak/Dione-Diagrams)**
