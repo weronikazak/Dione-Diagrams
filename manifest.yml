@@ -4,8 +4,9 @@ modules:
       resource: main
       resolver:
         function: resolver
-      title: Dione Diag
-      description: Generates Diagrams for Confluence
+      title: Dione Diagrams
+      description: Generates Diagrams for Confluence with MermaidJS
+      icon: https://raw.githubusercontent.com/weronikazak/Dione-VSC/main/public/images/dione-icon.png
   function:
     - key: resolver
       handler: index.handler
@@ -23,7 +24,8 @@ permissions:
     fetch:
       backend:
         - 'api.openai.com'
-        - 'https://dione-vsc.vercel.app/convert'
+    images:
+      - https://raw.githubusercontent.com/weronikazak/Dione-VSC/main/public/images/dione-icon.png
 
 app:
   id: ari:cloud:ecosystem::app/fd8819ff-32da-445d-89d5-995dc723c267

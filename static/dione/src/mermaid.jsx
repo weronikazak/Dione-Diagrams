@@ -3,10 +3,15 @@ import mermaid from "mermaid";
 
 mermaid.initialize({
   startOnLoad: true,
-  theme: "default",
+  theme: "forest",
   securityLevel: "loose",
-  fontFamily: "monospace",
+  fontFamily: "verdana",
+  fontSize: 12,
+  primaryColor: "#7acfc7",
+  secondaryColor: "#ffc35b",
+  primaryTextColor: '#1c1c1c',
 });
+
 export default class Mermaid extends React.Component {
   componentDidMount() {
     mermaid.contentLoaded();
